@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="1220" viewBox="0 0 680 610" role="img">
-  <title>ユースケース・スライス・部品と、作業の単位としての線</title>
-  <desc>ユースケースとスライスは 1 対 N、スライスと部品は N 対 M。スライスから部品への線 1 本が作業の単位で、新規・変更・使うだけの 3 種類があり、それぞれでテストの扱いが違うことを示す図</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="1672" viewBox="0 0 680 836" role="img">
+  <title>ユースケース・スライス・部品と、作業の単位としての線、スプリントの束ね方</title>
+  <desc>ユースケースとスライスは 1 対 N、スライスと部品は N 対 M。スライスから部品への線 1 本が作業の単位で、新規・変更・使うだけの 3 種類がある。スプリントは複数のスライスを束ね、共有する部品が無いスライスは別の担当で並行できることを示す図</desc>
   <defs>
     <style>
       text { font-family: 'Yu Gothic UI', 'Meiryo', 'Hiragino Sans', 'Noto Sans JP', sans-serif; }
@@ -21,7 +21,7 @@
       <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     </marker>
   </defs>
-  <rect x="0" y="0" width="680" height="610" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="680" height="836" fill="#FFFFFF"/>
 
   <text class="th" x="88" y="30" text-anchor="middle" dominant-baseline="central">ユースケース</text>
   <text class="th" x="285" y="30" text-anchor="middle" dominant-baseline="central">スライス（要件の層）</text>
@@ -115,4 +115,33 @@
   <path d="M36 570 L84 570" fill="none" stroke="#7F77DD" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
   <text class="th" x="96" y="570" dominant-baseline="central">使うだけ</text>
   <text class="ts" x="170" y="570" dominant-baseline="central">呼ぶ・設定するだけ。単体テストは作らず、スライスの結合テストで確かめる</text>
+
+  <text class="th" x="20" y="624" dominant-baseline="central">スプリント（回）＝ 複数のスライスを束ねたもの。共有する部品が無いスライスは並行できる</text>
+  <rect x="100" y="640" width="270" height="176" rx="8" fill="#FAFAF7" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="5 3"/>
+  <rect x="390" y="640" width="270" height="176" rx="8" fill="#FAFAF7" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="5 3"/>
+  <text class="th" x="235" y="658" text-anchor="middle" dominant-baseline="central">スプリント 1</text>
+  <text class="ts" x="235" y="676" text-anchor="middle" dominant-baseline="central">ゴール: 立替申請の基本の流れが通る</text>
+  <text class="th" x="525" y="658" text-anchor="middle" dominant-baseline="central">スプリント 2</text>
+  <text class="ts" x="525" y="676" text-anchor="middle" dominant-baseline="central">ゴール: 購買の流れと外貨建てが通る</text>
+  <text class="ts" x="36" y="710" dominant-baseline="central">担当 A</text>
+  <text class="ts" x="36" y="762" dominant-baseline="central">担当 B</text>
+
+  <path d="M335 710 C380 710 380 762 421 762" fill="none" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+  <text class="ts" x="235" y="762" text-anchor="middle" dominant-baseline="central">依存: 2-1 は 1-1 の作る部品を変更</text>
+
+  <g class="purple">
+    <rect x="135" y="692" width="200" height="36" rx="6" stroke-width="1"/>
+    <text class="th" x="235" y="710" text-anchor="middle" dominant-baseline="central">1-1 基本の立替申請</text>
+  </g>
+  <g class="purple">
+    <rect x="425" y="692" width="200" height="36" rx="6" stroke-width="1"/>
+    <text class="th" x="525" y="710" text-anchor="middle" dominant-baseline="central">1-2 外貨建て申請</text>
+  </g>
+  <g class="purple">
+    <rect x="425" y="744" width="200" height="36" rx="6" stroke-width="1"/>
+    <text class="th" x="525" y="762" text-anchor="middle" dominant-baseline="central">2-1 基本の発注申請</text>
+  </g>
+
+  <text class="ts" x="235" y="800" text-anchor="middle" dominant-baseline="central">骨格: 業務の流れと共通部品の最初の形</text>
+  <text class="ts note" x="525" y="800" text-anchor="middle" dominant-baseline="central">共有する部品が無いので並行できる</text>
 </svg>
